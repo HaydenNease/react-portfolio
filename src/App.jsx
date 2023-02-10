@@ -1,33 +1,43 @@
 import { useState } from 'react'
+import "bootswatch/dist/lux/bootstrap.min.css";
 import { Link, Route, Routes } from "react-router-dom";
+import { Navbar, Nav, Spinner } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css'
 import Resume from './components/pages/resume';
 import Contact from './components/pages/contact';
-import Projects from './components/pages/projects';
+import ProjectList from './components/projects/projectList';
+import Home from './components/pages/home';
 
 function App() {
 
   return (
     <div className="App">
-      <nav>
-        <Link to={'/resume'}>'Resume'</Link>
-        <Link to={'/contact'}>'Contact'</Link>
-        <Link to={'/projects'}>'Projects'</Link>
-      </nav>
-
+      <Navbar>
+        <Nav>
+          <Nav.Link href='/react-portfolio'>Home</Nav.Link>
+          <Nav.Link href='/react-portfolio/resume'>Resume</Nav.Link>
+          <Nav.Link href='/react-portfolio/contact'>Contact</Nav.Link>
+          <Nav.Link href='/react-portfolio/projects'>Projects</Nav.Link>
+        </Nav>
+      </Navbar>
       <Routes>
         <Route
+          element={<Home />}
+          path="/react-portfolio">
+        </Route>
+        <Route
           element={<Resume />}
-          path="/resume">
+          path="/react-portfolio/resume">
         </Route>
         <Route
           element={<Contact />}
-          path="/contact">
+          path="/react-portfolio/contact">
         </Route>
         <Route
-          element={<Projects />}
-          path="/projects">
+          element={<ProjectList />}
+          path="/react-portfolio/projects">
         </Route>
       </Routes>
     </div>
