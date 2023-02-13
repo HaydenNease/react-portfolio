@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import NavTabs from './NavTabs';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Resume from './pages/Resume';
-import Contact from './pages/Contact';
+import Container from 'react-bootstrap/Container';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import NavTabs from '../NavTabs';
+import Home from '../pages/Home';
+import Projects from '../pages/Projects';
+import Resume from '../pages/Resume';
+import Contact from '../pages/Contact';
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -25,11 +28,17 @@ export default function PortfolioContainer() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
+    <div className="bg-dark ">
       {/* We are passing the currentPage from state and the function to update it */}
-      <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-      {/* Here we are calling the renderPage method which will return a component  */}
-      {renderPage()}
+      <Container className="bg-white border-dark border-0 rounded">
+        <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
+        <Row>
+          <Col className='container-fluid'>
+            {/* Here we are calling the renderPage method which will return a component  */}
+            {renderPage()}
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

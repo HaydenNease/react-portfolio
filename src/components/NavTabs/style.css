@@ -2,3 +2,6 @@
   color: white;
 }
 
+.nav-item a:hover {
+  background-color: #495057;
+}
