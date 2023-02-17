@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
 import './style.css';
 
 // Here we import a helper function that will check if the email is valid
@@ -56,7 +57,7 @@ function Contact() {
   };
 
   return (
-    <div>
+    <>
       <h3>Send me an email!</h3>
       <form className="form">
         <input
@@ -87,7 +88,7 @@ function Contact() {
           <p className="error-text">{errorMessage}</p>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

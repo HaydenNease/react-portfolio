@@ -13,7 +13,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           <Nav.Link
             href="#home"
             onClick={() => handlePageChange('Home')}
-            className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}
+            className={currentPage === 'Home' ? 'nav-link active' : 'nav-link border-start rounded-top'}
           >Home
           </Nav.Link>
         </Nav.Item>
