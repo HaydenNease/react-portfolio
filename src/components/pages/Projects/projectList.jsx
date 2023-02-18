@@ -6,12 +6,13 @@ import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
 import './style.css';
 
+
 const ProjectList = () => {
   const projects = [
     {
       name: 'Which to Read?',
       githubUrl: 'https://github.com/Saidou25/Print-or-Film',
-      liveExampleUrl: 'http://placeimg.com/640/360/any',
+      liveExampleUrl: 'https://saidou25.github.io/Print-or-Film/',
       screenShotFile: 'http://placeimg.com/640/320/people',
     },
     {
@@ -30,15 +31,14 @@ const ProjectList = () => {
 
   return projects.map((project, index) => {
     return (
-      <a style={{ cursor: 'pointer' }} onClick={siteSelectedCallback}>
-        <Col key={index}>
-          <Card className="bg-dark text-white" href={`${project.liveExampleUrl}`}>
-            <Card.Img src={`${project.screenShotFile}`} alt="Card image" />
-            <Card.ImgOverlay>
-              <Card.Title>{project.name}</Card.Title>
-            </Card.ImgOverlay>
-          </Card>
-        </Col>
+      <a key={index} href={project.liveExampleUrl} target="_blank" className="py-4">
+        <Card className="bg-dark text-white">
+          <Card.Img src={`${project.screenShotFile}`} alt="Card image"/>
+          <Card.ImgOverlay>
+            <Card.Title>{project.name}</Card.Title>
+            <Button href={project.githubUrl} target="_blank">GitHub</Button>
+          </Card.ImgOverlay>
+        </Card>
       </a>
     )
   })
