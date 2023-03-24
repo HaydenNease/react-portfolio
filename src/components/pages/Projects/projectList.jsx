@@ -29,7 +29,7 @@ const ProjectList = () => {
     return (
       <a key={index} href={project.liveExampleUrl} target="_blank" className="py-4">
         <Card className="bg-dark text-white">
-          <Card.Img src={`${project.screenShotFile}`} alt="Card image"/>
+          <Card.Img src={`${project.screenShotFile}`} alt={`${project.name}`+ " image"}/>
           <Card.ImgOverlay>
             <Card.Title>{project.name}</Card.Title>
             <Button href={project.githubUrl} target="_blank">GitHub</Button>
