@@ -7,6 +7,7 @@ import Home from '../pages/Home';
 import Projects from '../pages/Projects';
 import Resume from '../pages/Resume';
 import Contact from '../pages/Contact';
+import './style.css';
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -28,17 +29,14 @@ export default function PortfolioContainer() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div className="bg-dark ">
-      {/* We are passing the currentPage from state and the function to update it */}
-      <Container className="bg-white border-dark border-0 rounded">
-        <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-        <Row>
-          <Col className='container-fluid'>
-            {/* Here we are calling the renderPage method which will return a component  */}
-            {renderPage()}
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <Container className="bg-white border-dark border-0 rounded">
+      <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
+      <Row>
+        <Col className='container-fluid'>
+          {/* Here we are calling the renderPage method which will return a component  */}
+          {renderPage()}
+        </Col>
+      </Row>
+    </Container>
   );
 }
