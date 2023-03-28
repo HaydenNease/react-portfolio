@@ -5,3 +5,15 @@
 .nav-item a:hover {
   background-color: #495057;
 }
+
+header {
+  display: flex;
+  align-items: flex-end;
+  
+}
+
+.headerContainer {  
+  height: 50vh;
+  width: 100%;
+  background-size:cover;
+}
