@@ -57,7 +57,7 @@ function Contact() {
   };
 
   return (
-    <>
+    <div>
       <h3>Send me an email!</h3>
       <form className="form">
         <input
@@ -88,7 +88,7 @@ function Contact() {
           <p className="error-text">{errorMessage}</p>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

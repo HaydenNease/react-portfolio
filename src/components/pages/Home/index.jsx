@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Home({hideBody}) {
+function Home() {
 
   return (
-    <div style={{visibility: `${hideBody}`}}>
+    <div>
       <h1>Hayden Nease </h1>
       <p>
         Hi! My name is Hayden and I'm 30 years old. I was born, raised, and continue to reside in Charlotte, NC. I've spent most of my adult life working in the food industry and in custom metal fabrication. This is my first experience with coding or web development and I'm planning to make it a career change - and have fun while doing it!

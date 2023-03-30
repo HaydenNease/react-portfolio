@@ -22,29 +22,29 @@ function App() {
   };
   console.log(useScrollPosition());
 
-  const hideBody = () => {
-    if (useScrollPosition() === 0) {
-      return "hidden";
-    } else {
-      return "visible";
-    }
-  }
-  hideBody();
   
-
+  
   // This method is checking to see what the value of `currentPage` is. Depending on the value of currentPage, we return the corresponding component to render.
   const renderPage = () => {
     if (currentPage === 'Home') {
-      return <Home hideBody={hideBody()} />;
+      return <Home/>;
     }
     if (currentPage === 'Projects') {
-      return <Projects />;
+      return <Projects/>;
     }
     if (currentPage === 'Resume') {
-      return <Resume />;
+      return <Resume/>;
     }
-    return <Contact />;
+    return <Contact/>;
   };
+  const hideBody = () => {
+    if (useScrollPosition() === 0) {
+      return <div/>
+    } else {
+      return renderPage();
+    }
+  }
+  hideBody();
 
   const handlePageChange = (page) => setCurrentPage(page);
 
@@ -52,8 +52,9 @@ function App() {
     <div>
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
       {/* Here we are calling the renderPage method which will return a component  */}
-      {renderPage()}
+      {hideBody()}
       <Footer/>
+      <div>poop</div>
     </div>
   );
 };
